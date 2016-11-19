@@ -172,7 +172,7 @@
                     var klik = parseInt(klikniety2);
                     
                     l = ilosc_elementow;
-                    var p = elementy.indexOf(8);
+                    var x = elementy.indexOf(8);
                     //console.log(il);
                     //console.log("powinienem reagowac gora dol: " + (klik + il) + ", " + (klik - il));
 
@@ -185,20 +185,22 @@
                     console.log("gora: " + elementy[klik - il]);
                     */
 
-                    console.log("gdzie jest bialy: " + p)
-                    if(elementy[klik + 1] == p ||
-                       elementy[klik - 1] == p ||
-                       elementy[klik + il] == p ||
-                       elementy[klik - il] == p){
+                    console.log("gdzie jest bialy: " + x)
+                    if(elementy[klik + 1] == x ||
+                       elementy[klik - 1] == x ||
+                       elementy[klik + il] == x ||
+                       elementy[klik - il] == x){
+                           elementy[x] = klik;
+                           elementy[klik] = l;
+                           
                            console.log("---------- zamieniono ----------");
-                            var nowy = document.getElementById("e" + p);
+                            var nowy = document.getElementById("e" + x);
                             nowy.style.backgroundImage = "url(./gfx/koza" + actual + ".jpg)";
                             nowy.style.backgroundPosition = this.style.backgroundPosition;
                             nowy.setAttribute("id", klikniety);
-                            this.setAttribute("id", "e" + l);
+                            this.setAttribute("id", "e" + klik);
                             this.style.backgroundImage = "none";
-                            elementy[p] = klik;
-                            elementy[klik] = l;
+                            
                        }else{
                            console.log("---------- nie moge zmienic ----------");
                            //console.log("p: " + p);
