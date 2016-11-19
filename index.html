@@ -147,7 +147,7 @@
                             cut(this.value);
                             actual = slider_number;
                             elementy = [];
-                            il = this.value;
+                            il = parseInt(this.value);
                             var p = 0;
                             for(var j=0;j<this.value*this.value;j++){
                                 elementy.push(p);
@@ -170,11 +170,20 @@
                     klikniety = this.id;
                     var klikniety2 = klikniety.substr(1);
                     var klik = parseInt(klikniety2);
-                    console.log("wcisnales: " + klikniety);
+                    
                     l = ilosc_elementow;
                     var p = elementy.indexOf(8);
-                    console.log(il);
-                    console.log("powinienem reagowac gora dol: " + (klik + il) + ", " + (klik - il));
+                    //console.log(il);
+                    //console.log("powinienem reagowac gora dol: " + (klik + il) + ", " + (klik - il));
+
+                    /*
+                    console.log("wcisnales: " + klik);
+                    console.log("logi dotyczate reakcji na elementy");
+                    console.log("prawo: " + elementy[klik + 1]);
+                    console.log("lewo: " + elementy[klik - 1]);
+                    console.log("dol: " + elementy[klik + il]);
+                    console.log("gora: " + elementy[klik - il]);
+                    */
 
                     if(elementy[klik + 1] == p ||
                        elementy[klik - 1] == p ||
@@ -189,8 +198,6 @@
                             this.style.backgroundImage = "none";
                             elementy[p] = klik;
                             elementy[klik] = l;
-                            
-
                        }else{
                            console.log("---------- nie moge zmienic ----------");
                            console.log("p: " + p);
@@ -198,7 +205,7 @@
                        }
                         console.log("tablica " + elementy);
                 }
-                
+
                 //code
             }
         </script>
